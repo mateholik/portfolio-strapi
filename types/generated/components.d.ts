@@ -5,10 +5,11 @@ export interface BlocksTitleAndCards extends Schema.Component {
   info: {
     displayName: 'Title and cards';
     icon: 'bold';
+    description: '';
   };
   attributes: {
-    title: Attribute.String;
     card: Attribute.Component<'elements.card', true>;
+    title: Attribute.String;
   };
 }
 

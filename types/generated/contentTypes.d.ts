@@ -879,6 +879,7 @@ export interface ApiPortfolioPagePortfolioPage extends Schema.SingleType {
     singularName: 'portfolio-page';
     pluralName: 'portfolio-pages';
     displayName: 'Portfolio page';
+    description: '';
   };
   options: {
     draftAndPublish: true;

@@ -2,17 +2,18 @@
   "collectionName": "components_blocks_title_and_cards",
   "info": {
     "displayName": "Title and cards",
-    "icon": "bold"
+    "icon": "bold",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "card": {
       "type": "component",
       "repeatable": true,
       "component": "elements.card"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

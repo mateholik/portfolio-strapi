@@ -5,16 +5,16 @@ import { Card_Plain } from '../../elements/interfaces/Card';
 import { Card_NoRelations } from '../../elements/interfaces/Card';
 
 export interface TitleAndCards {
-  title?: string;
   card: Card[];
+  title?: string;
 }
 export interface TitleAndCards_Plain {
-  title?: string;
   card: Card_Plain[];
+  title?: string;
 }
 
 export interface TitleAndCards_NoRelations {
-  title?: string;
   card: Card_NoRelations[];
+  title?: string;
 }
 

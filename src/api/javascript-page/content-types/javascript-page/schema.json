@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "javascript_pages",
+  "info": {
+    "singularName": "javascript-page",
+    "pluralName": "javascript-pages",
+    "displayName": "Javascript page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "websites": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.title-and-cards"
+    }
+  }
+}

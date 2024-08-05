@@ -841,6 +841,45 @@ export interface ApiFaqFaq extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqPageFaqPage extends Schema.SingleType {
+  collectionName: 'faq_pages';
+  info: {
+    singularName: 'faq-page';
+    pluralName: 'faq-pages';
+    displayName: 'FAQ page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    pageTitle: Attribute.String;
+    pageDescription: Attribute.RichText;
+    faqTitle: Attribute.String;
+    faqs: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'oneToMany',
+      'api::faq.faq'
+    >;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiJavascriptPageJavascriptPage extends Schema.SingleType {
   collectionName: 'javascript_pages';
   info: {
@@ -866,6 +905,37 @@ export interface ApiJavascriptPageJavascriptPage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::javascript-page.javascript-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMenuItemMenuItem extends Schema.CollectionType {
+  collectionName: 'menu_items';
+  info: {
+    singularName: 'menu-item';
+    pluralName: 'menu-items';
+    displayName: 'Menu Item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    path: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::menu-item.menu-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::menu-item.menu-item',
       'oneToOne',
       'admin::user'
     > &
@@ -905,6 +975,149 @@ export interface ApiPortfolioPagePortfolioPage extends Schema.SingleType {
   };
 }
 
+export interface ApiPricePagePricePage extends Schema.SingleType {
+  collectionName: 'price_pages';
+  info: {
+    singularName: 'price-page';
+    pluralName: 'price-pages';
+    displayName: 'Price page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    pageTitle: Attribute.String;
+    totalPriceText: Attribute.String;
+    calculator: Attribute.Component<'elements.priceb-block', true>;
+    mobText: Attribute.RichText;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::price-page.price-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::price-page.price-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServicesPageServicesPage extends Schema.SingleType {
+  collectionName: 'services_pages';
+  info: {
+    singularName: 'services-page';
+    pluralName: 'services-pages';
+    displayName: 'Services page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    services: Attribute.Component<'blocks.title-and-services', true>;
+    pageTitle: Attribute.String;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::services-page.services-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::services-page.services-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSidebarSidebar extends Schema.SingleType {
+  collectionName: 'sidebars';
+  info: {
+    singularName: 'sidebar';
+    pluralName: 'sidebars';
+    displayName: 'Sidebar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    menu_items: Attribute.Relation<
+      'api::sidebar.sidebar',
+      'oneToMany',
+      'api::menu-item.menu-item'
+    >;
+    social_links: Attribute.Relation<
+      'api::sidebar.sidebar',
+      'oneToMany',
+      'api::social-link.social-link'
+    >;
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::sidebar.sidebar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::sidebar.sidebar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSocialLinkSocialLink extends Schema.CollectionType {
+  collectionName: 'social_links';
+  info: {
+    singularName: 'social-link';
+    pluralName: 'social-links';
+    displayName: 'Social link';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    iconName: Attribute.String;
+    link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social-link.social-link',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social-link.social-link',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -925,8 +1138,14 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::category.category': ApiCategoryCategory;
       'api::faq.faq': ApiFaqFaq;
+      'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::javascript-page.javascript-page': ApiJavascriptPageJavascriptPage;
+      'api::menu-item.menu-item': ApiMenuItemMenuItem;
       'api::portfolio-page.portfolio-page': ApiPortfolioPagePortfolioPage;
+      'api::price-page.price-page': ApiPricePagePricePage;
+      'api::services-page.services-page': ApiServicesPageServicesPage;
+      'api::sidebar.sidebar': ApiSidebarSidebar;
+      'api::social-link.social-link': ApiSocialLinkSocialLink;
     }
   }
 }

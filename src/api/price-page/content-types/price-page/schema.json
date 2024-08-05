@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "price_pages",
+  "info": {
+    "singularName": "price-page",
+    "pluralName": "price-pages",
+    "displayName": "Price page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pageTitle": {
+      "type": "string"
+    },
+    "totalPriceText": {
+      "type": "string"
+    },
+    "calculator": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.priceb-block"
+    },
+    "mobText": {
+      "type": "richtext"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

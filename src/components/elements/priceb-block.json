@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_priceb_blocks",
+  "info": {
+    "displayName": "Price block",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "blockTitle": {
+      "type": "string"
+    },
+    "option": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.price-block-option"
+    }
+  }
+}

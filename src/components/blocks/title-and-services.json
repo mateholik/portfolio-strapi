@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_title_and_services",
+  "info": {
+    "displayName": "Title and services",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

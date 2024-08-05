@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_price_block_options",
+  "info": {
+    "displayName": "Price block option"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

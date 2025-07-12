@@ -25,6 +25,20 @@ module.exports = createCoreController(
             },
           },
         },
+        seo: {
+          populate: {
+            metaImage: {
+              fields: ["name", "url"],
+            },
+            metaSocial: {
+              populate: {
+                image: {
+                  fields: ["name", "url"],
+                },
+              },
+            },
+          },
+        },
       };
 
       // Merge with any existing query parameters
@@ -47,6 +61,20 @@ module.exports = createCoreController(
                 category: {
                   populate: true,
                 },
+                image: {
+                  fields: ["name", "url"],
+                },
+              },
+            },
+          },
+        },
+        seo: {
+          populate: {
+            metaImage: {
+              fields: ["name", "url"],
+            },
+            metaSocial: {
+              populate: {
                 image: {
                   fields: ["name", "url"],
                 },

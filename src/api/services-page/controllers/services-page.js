@@ -20,7 +20,11 @@ module.exports = createCoreController(
               fields: ["name", "url"],
             },
             metaSocial: {
-              populate: true,
+              populate: {
+                image: {
+                  fields: ["name", "url"],
+                },
+              },
             },
           },
         },
@@ -48,7 +52,11 @@ module.exports = createCoreController(
               fields: ["name", "url"],
             },
             metaSocial: {
-              populate: true,
+              populate: {
+                image: {
+                  fields: ["name", "url"],
+                },
+              },
             },
           },
         },

@@ -5,22 +5,26 @@ export interface Faq {
   attributes: {
     createdAt: Date;    updatedAt: Date;    publishedAt?: Date;    question?: string;
     answer?: string;
+    Icon?: string;
   };
 }
 export interface Faq_Plain {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  question?: string;
   answer?: string;
+  Icon?: string;
 }
 
 export interface Faq_NoRelations {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  question?: string;
   answer?: string;
+  Icon?: string;
 }
 
 export interface Faq_AdminPanelLifeCycle {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  question?: string;
   answer?: string;
+  Icon?: string;
 }

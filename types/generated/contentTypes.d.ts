@@ -824,6 +824,7 @@ export interface ApiFaqFaq extends Schema.CollectionType {
     singularName: 'faq';
     pluralName: 'faqs';
     displayName: 'FAQ';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -831,6 +832,7 @@ export interface ApiFaqFaq extends Schema.CollectionType {
   attributes: {
     question: Attribute.String;
     answer: Attribute.RichText;
+    Icon: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -894,6 +896,7 @@ export interface ApiJavascriptPageJavascriptPage extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     websites: Attribute.Component<'blocks.title-and-cards'>;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -957,6 +960,7 @@ export interface ApiPortfolioPagePortfolioPage extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     websites: Attribute.Component<'blocks.title-and-cards', true>;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
